@@ -1,0 +1,16 @@
+<template>
+  <lightning-card title="Patients" icon-name="standard:account">
+    <template if:true={patients.length}>
+      <lightning-datatable
+        key-field="Id"
+        data={patients}
+        columns={columns}
+        hide-checkbox-column="true">
+      </lightning-datatable>
+    </template>
+
+    <template if:false={patients.length}>
+      <p class="slds-p-around_medium">No patients found.</p>
+    </template>
+  </lightning-card>
+</template>

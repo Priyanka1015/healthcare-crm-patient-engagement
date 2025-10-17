@@ -1,0 +1,18 @@
+<template>
+  <lightning-card title="Live Appointments" icon-name="standard:dashboard">
+    <template if:true={appointments.length}>
+      <ul class="slds-p-around_small">
+        <template for:each={appointments} for:item="a">
+          <li key={a.Id} class="slds-m-bottom_x-small">
+            <lightning-badge label={a.Patient__r.Name}></lightning-badge>
+            <span class="slds-m-left_small">{a.Status__c}</span>
+            <span class="slds-m-left_small">{a.Start__c} → {a.End__c}</span>
+          </li>
+        </template>
+      </ul>
+    </template>
+    <template if:false={appointments.length}>
+      <p class="slds-p-around_medium">No appointments yet.</p>
+    </template>
+  </lightning-card>
+</template>

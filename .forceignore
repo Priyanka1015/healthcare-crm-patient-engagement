@@ -1,0 +1,10 @@
+node_modules
+coverage
+.settings
+.idea
+.vscode
+*.log
+**/__tests__/**
+**/*.test.js
+**/__tests__/**
+**/*.test.js

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+  <label>Patient Data Admin</label>
+
+  <!-- Object permissions -->
+  <objectPermissions>
+    <allowCreate>true</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>true</allowEdit>
+    <allowRead>true</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>true</viewAllRecords>
+    <object>Patient__c</object>
+  </objectPermissions>
+
+  <!-- Field permissions: Patient__c -->
+  <fieldPermissions><editable>true</editable><readable>true</readable><field>Patient__c.MRN__c</field></fieldPermissions>
+  <fieldPermissions><editable>true</editable><readable>true</readable><field>Patient__c.Primary_Email__c</field></fieldPermissions>
+  <fieldPermissions><editable>true</editable><readable>true</readable><field>Patient__c.Date_of_Birth__c</field></fieldPermissions>
+  <fieldPermissions><editable>true</editable><readable>true</readable><field>Patient__c.Care_Notes__c</field></fieldPermissions>
+
+  <!-- Object permissions: Appointment__c (handy for testing) -->
+  <objectPermissions>
+    <allowCreate>true</allowCreate>
+    <allowDelete>false</allowDelete>
+    <allowEdit>true</allowEdit>
+    <allowRead>true</allowRead>
+    <modifyAllRecords>false</modifyAllRecords>
+    <viewAllRecords>true</viewAllRecords>
+    <object>Appointment__c</object>
+  </objectPermissions>
+
+  <!-- Field permissions: Appointment__c -->
+  <fieldPermissions><editable>true</editable><readable>true</readable><field>Appointment__c.Patient__c</field></fieldPermissions>
+  <fieldPermissions><editable>true</editable><readable>true</readable><field>Appointment__c.Start__c</field></fieldPermissions>
+  <fieldPermissions><editable>true</editable><readable>true</readable><field>Appointment__c.End__c</field></fieldPermissions>
+  <fieldPermissions><editable>true</editable><readable>true</readable><field>Appointment__c.Status__c</field></fieldPermissions>
+</PermissionSet>

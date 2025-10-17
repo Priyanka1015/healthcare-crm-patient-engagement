@@ -1,0 +1,35 @@
+<template>
+  <lightning-card title="Schedule Appointment" icon-name="standard:event">
+    <div class="slds-p-around_medium">
+      <lightning-combobox
+        name="patient"
+        label="Select Patient"
+        placeholder="Choose a patient"
+        options={patients}
+        value={selectedPatient}
+        onchange={handlePatientChange}>
+      </lightning-combobox>
+
+      <lightning-input type="datetime-local" label="Start Time" onchange={handleStartChange}></lightning-input>
+      <lightning-input type="datetime-local" label="End Time" onchange={handleEndChange}></lightning-input>
+
+      <lightning-button
+        class="slds-m-top_medium"
+        variant="brand"
+        label="Schedule"
+        onclick={handleCreate}>
+      </lightning-button>
+
+      <template if:true={lastAppointmentId}>
+        <div class="slds-m-top_large">
+          <lightning-input type="file" label="Attach a file to this appointment" onchange={handleFileChange}></lightning-input>
+          <lightning-button class="slds-m-top_small" label="Upload to S3" onclick={handleUpload} disabled={disableUpload}></lightning-button>
+        </div>
+      </template>
+
+      <template if:true={uploadStatus}>
+        <p class="slds-m-top_small">{uploadStatus}</p>
+      </template>
+    </div>
+  </lightning-card>
+</template>

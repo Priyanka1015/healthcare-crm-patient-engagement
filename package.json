@@ -1,0 +1,6 @@
+{ "name":"salesforce-lwc-tests","private":true,"devDependencies":{"@salesforce/sfdx-lwc-jest":"^5.0.0", "jest": "^29.7.0",
+    "@babel/core": "^7.25.0",
+    "@babel/preset-env": "^7.25.0"},"scripts":{"test:lwc":"sfdx-lwc-jest --coverage", "test": "jest",
+    "test:unit": "sfdx-lwc-jest",
+    "test:unit:watch": "sfdx-lwc-jest --watch",
+    "test:unit:coverage": "sfdx-lwc-jest --coverage"},"jest":{"testEnvironment":"jsdom"} }
