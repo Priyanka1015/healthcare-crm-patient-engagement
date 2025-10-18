@@ -1,0 +1,10 @@
+# Salesforce config & auth
+.sfdx/
+sf/
+.env
+*.log
+
+# OS & IDE
+.DS_Store
+.vscode/
+node_modules/
