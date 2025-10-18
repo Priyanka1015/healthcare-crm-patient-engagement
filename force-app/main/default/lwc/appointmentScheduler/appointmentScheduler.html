@@ -22,8 +22,13 @@
 
       <template if:true={lastAppointmentId}>
         <div class="slds-m-top_large">
-          <lightning-input type="file" label="Attach a file to this appointment" onchange={handleFileChange}></lightning-input>
-          <lightning-button class="slds-m-top_small" label="Upload to S3" onclick={handleUpload} disabled={disableUpload}></lightning-button>
+          <!-- Native input exposes File object; add a data hook for reset -->
+<input type="file" accept="*/*" onchange={handleFileChange} data-file />
+<lightning-button class="slds-m-top_small"
+                  label="Upload to S3"
+                  onclick={handleUpload}
+                  disabled={disableUpload}></lightning-button>
+
         </div>
       </template>
 

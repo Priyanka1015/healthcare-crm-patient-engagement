@@ -93,7 +93,7 @@ export default class AppointmentScheduler extends LightningElement {
       // clear selection
       this.file = null;
       // refresh file input UI
-      const input = this.template.querySelector('input[type="file"]');
+      const input = this.template.querySelector('input[data-file]');
       if (input) input.value = '';
     } catch (e) {
       console.error(e);

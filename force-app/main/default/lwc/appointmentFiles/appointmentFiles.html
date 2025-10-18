@@ -1,0 +1,33 @@
+<template>
+  <lightning-card title="Files">
+    <template if:true={rows.length}>
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Size</th>
+            <th>Uploaded</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={rows} for:item="r">
+            <tr key={r.id}>
+              <td>{r.fileName}</td>
+              <td>{r.contentType}</td>
+              <td>{r.sizeBytes}</td>
+              <td><lightning-formatted-date-time value={r.uploadedOn}></lightning-formatted-date-time></td>
+              <td>
+                <lightning-button variant="brand-outline" label="Download" data-id={r.id} onclick={download}></lightning-button>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </template>
+    <template if:false={rows.length}>
+      <div class="slds-p-around_small slds-text-color_weak">No files yet.</div>
+    </template>
+  </lightning-card>
+</template>
